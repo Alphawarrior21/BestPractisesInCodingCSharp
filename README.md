@@ -76,3 +76,33 @@ Lets understand this through an example :
         }
 
 ![Code Metrics demo from VS](images/CC_demo.gif)
+
+If you calculate the code metrics of this code, you will find a bad result when it comes to cyclomatic complexity, as you can see in the following screenshot. A cyclomatic complexity number above 10 indicates that the code is difficult to read, and a developer will probably have trouble maintaining it in a future code change.
+
+It is important to reinforce that the purpose of the code from this example is not the focus here. The point here is to show you the number of improvements that can be made to write better code :
+The options from switch-case could be written using Enum.
+-Each case processing can be done:
+    - In a specific method.
+    - In a specific class, inheriting the action from the superclass,using the polymorphism concept.
+    - In a specific class, implementing an interface to define a contract.
+
+switch-case can be substituted with Dictionary<Enum, Method> or by using the switch expression.
+
+By refactoring this code with the preceding techniques, the result is a piece of code that is much easier to understand, as you can see in the following code snippet of its main method:
+
+static void Main()
+{
+var billingMode = GetBillingMode();
+var messageResponse = ProcessCreditCardMethod();
+Dictionary<CreditCardProcessingResult, CheckResultMethod>
+methodsForCheckingResult = GetMethodsForCheckingResult();
+if (methodsForCheckingResult.ContainsKey(messageResponse))
+methodsForCheckingResult[messageResponse](billingMode,
+messageResponse);
+else
+Console.WriteLine("The result of processing is unknown");
+}
+
+
+
+The key point here is that with the applied techniques, our understanding of the code increased and the complexity index decreased, thus proving the importance of cyclomatic complexity
