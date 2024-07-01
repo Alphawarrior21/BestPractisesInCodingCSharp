@@ -265,3 +265,33 @@ In the same way that you will have trouble if you do not manage objects created 
 - switch-case statements must have a default treatment
 
 
+### Implementing Code Reusability
+
+You must analyze your code and select the parts of it that would be good to decouple from your application.
+The most compelling reason you should decouple them is related to how you are sure that this code can be reused in other parts of the application or even in another application. This is exactly what Andrew Hunt and David Thomas present as the DRY principle (don’t repeat yourself):
+
+- Object-oriented analysis
+The object-oriented analysis approach gives us the ability to reuse code in different ways, from the facility of inheritance to the changeability of polymorphism. Complete adoption of objectoriented programming will let you implement abstraction and encapsulation, too.
+
+- Use the already-implemented components from your user library, selecting features that need them in the software requirements specification.
+- Identify features in the software requirements specification that are candidates to be designed as library components.
+- Modify the specification, considering that these features will be developed using reusable components.
+- Design the reusable components and be sure that they have the appropriate interfaces to be used in many projects.
+- Build the project architecture with the new component library version.
+- Document the component library version so that every developer and team knows about it.
+
+Once you have made all the necessary effort to guarantee you have good libraries that can be reused in many of your projects, you will find another difficult situation arises when enabling reusability: it is not so easy to let programmers know you have libraries ready to reuse.There are some simple approaches to documenting a library. As we mentioned when we talked about the development life cycle, documenting is a good way to help developers take notice of the libraries they have. There are two examples of documenting
+reusable code that we would like to mention in the following subsections.
+
+- Documenting .NET libraries using DocFX
+DocFX is a good option for documenting a library using comments made in its code. By simply adding the docfx.console NuGet package, the tool allows you to create a task that will run once your library has been built:
+
+![Code Metrics](images/CodeFx_1.png)
+
+The output of this compilation is a stylish static website that contains the documentation of your code:
+
+![Code Metrics](images/CodeFx_2.png)
+
+- Documenting a web API using Swagger
+
+
