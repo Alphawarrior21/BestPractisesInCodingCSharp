@@ -4,6 +4,8 @@ This repo highlights best practices for creating safe, simple, and maintainable 
 ## Understanding the design patterns and their purpose.
 While implementing a good solution, how would one will make sure that solution is great in terms for reusability,good performance, and good maintainability etc. The answer is by choosing a good design pattern which not only provide a solution to the problem but is efficient in every way possible.
 
+![Design Pattern](images/DP_1.png)
+
 ### Highlights of SOLID principles
 - Single Responsibility: A module or function should be responsible for a single purpose.
 - Open-Closed: A software artifact should be open for extensionbut closed for modification.
